@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>كيدي ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ffd6e7,#ffe8f1);
+overflow:hidden;
+}
+
+.card{
+background:white;
+padding:30px;
+width:340px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.cat{
+width:180px;
+margin-bottom:15px;
+}
+
+h1{
+color:#ff4f8a;
+font-size:32px;
+margin-bottom:25px;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+position:relative;
+height:70px;
+}
+
+button{
+border:none;
+padding:12px 30px;
+font-size:20px;
+border-radius:15px;
+cursor:pointer;
+transition:.2s;
+}
+
+#yes{
+background:#ff4f8a;
+color:white;
+box-shadow:0 5px 15px rgba(255,79,138,.4);
+}
+
+#no{
+background:#e5e5e5;
+position:absolute;
+right:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="cats.png" class="cat">
+
+<h1>كيدي تحبيني لو لا؟</h1>
+
+<div class="buttons">
+<button id="yes" onclick="love()">إي</button>
+<button id="no">لا</button>
+</div>
+
+</div>
+
+<script>
+
+const noBtn = document.getElementById("no");
+
+function moveButton(){
+const x = Math.random() * (window.innerWidth - 120);
+const y = Math.random() * (window.innerHeight - 70);
+
+noBtn.style.left = x + "px";
+noBtn.style.top = y + "px";
+}
+
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("click", moveButton);
+
+function love(){
+document.body.innerHTML = `
+<div style="
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:#ffd6e7;
+font-size:40px;
+color:#ff4f8a;
+font-weight:bold;
+">
+❤️ أحبج كيدي ❤️
+</div>
+`;
+}
+
+</script>
+
+</body>
+</html>
